@@ -1,15 +1,15 @@
 import { useState, useEffect } from "react";
 import { projectStorage } from "../firebase/config";
 
-const useStorage = (file) => {
+const useStorage = (imag) => {
   const [progress, setProgress] = useState(0);
   const [error, setError] = useState(null);
   const [url, setUrl] = useState(null);
 
   useEffect(() => {
-    const storageRef = projectStorage.ref(file.name);
+    const storageRef = projectStorage.ref(imag.name);
 
-    storageRef.put(file).on(
+    storageRef.put(imag).on(
       "state_changed",
       (snap) => {
         let percentage = (snap.bytesTransferred / snap.totalbytes) * 100;
@@ -23,7 +23,7 @@ const useStorage = (file) => {
         setUrl(url);
       }
     );
-  }, [file]);
+  }, [imag]);
 
   return { progress, url, error };
 };

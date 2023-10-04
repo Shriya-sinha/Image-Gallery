@@ -12,7 +12,7 @@ const Uploadform = () => {
 
     if (selected && types.includes(selected.type)) {
       setimag(selected);
-      setError(null);
+      setError("");
     } else {
       setimag(null);
       setError("Please select an image file of type png or jpeg");
