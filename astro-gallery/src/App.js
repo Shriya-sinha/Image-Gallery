@@ -3,7 +3,7 @@ import { app } from "./firebase/config";
 import "./App.css";
 import Navbar from "./components/Navbar";
 import Uploadform from "./components/uploadform";
-import setStorage from "";
+// import setStorage from "";
 
 const db = getDatabase(app);
 

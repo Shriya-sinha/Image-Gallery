@@ -1,9 +1,8 @@
 // Import the functions you need from the SDKs you need
-import * as firebase from "firebase/app";
-import "firebase/storage";
-import "firebase/firestore";
-
-import { initializeApp } from "firebase/app";
+import firebase from "firebase/compat/app";
+import "firebase/compat/storage";
+import "firebase/compat/auth";
+import "firebase/compat/firestore";
 
 const firebaseConfig = {
   apiKey: "AIzaSyBcuDtqiBO2IsKfyVFKLs0hiqOIUA1wna8",
@@ -15,7 +14,7 @@ const firebaseConfig = {
   dataBaseURL: "https://astro-image-gallery-default-rtdb.firebaseio.com/",
 };
 
-const app = initializeApp(firebaseConfig);
+const app = firebase.initializeApp(firebaseConfig);
 const projectStorage = firebase.storage();
 const projectFirestore = firebase.firestore();
 
