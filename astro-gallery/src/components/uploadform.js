@@ -20,7 +20,11 @@ const Uploadform = () => {
   };
   return (
     <form>
-      <input type="file" onChange={changeHandler} />
+      <input
+        type="file"
+        src="/astro-gallery/src/gallery.png"
+        onChange={changeHandler}
+      />
       <div className="output">
         {error && <div className="error">{error}</div>}
         {imag && <div>{imag.name}</div>}
